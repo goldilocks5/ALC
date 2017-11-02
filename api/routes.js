@@ -6,4 +6,7 @@ router.get('/student', StudentController.getStudent);
 router.post('/student', StudentController.createStudent);
 // router.put('')
 
+// router.get('/Student_list', StudentController.getStudent);
+// router.get('/')
+
 module.exports = router;
