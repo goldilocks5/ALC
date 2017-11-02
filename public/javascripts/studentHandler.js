@@ -14,7 +14,7 @@ $(document).ready(function() {
             phone_no: $('#phone_no').val()
         }
 
-        axios.post('http://localhost:3000/api/student', student )
+        axios.post('http://localhost:3000/api/student', students )
         .then((response) => {
             console.log(response)
             if(response.data.status){
@@ -30,5 +30,13 @@ $(document).ready(function() {
         .catch((err) => {
             console.log(err)
         })
-    })
+    });
+    $("#editStudent").click(function(e){
+        e.preventDefault();
+
+
+    });
+    $("#delete").click(function(){
+      
+    });
 })
