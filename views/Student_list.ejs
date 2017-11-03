@@ -79,9 +79,9 @@
                                         	<td><%= posts[i].phone_no %></td>
                                         	<td><a href="/View_Student_profile/<%= posts[i].matric_no %>"><span class="glyphicon glyphicon-eye-open"></span></a>
                                         	&nbsp &nbsp       
-										    <a href="/Edit_Student_profile/<%= posts[i].matric_no %>" id="delete"><span class="glyphicon glyphicon-edit"></span></a>
+										    <a href="/Edit_Student_profile/<%= posts[i].id %>" id="delete"><span class="glyphicon glyphicon-edit"></span></a>
 										    &nbsp &nbsp       
-										    <a href="#" id="delete"><span class="glyphicon glyphicon-trash"></span></a>
+										    <a href="#" href="/del/<%= posts[i].id %>"" id="delete"><span class="glyphicon glyphicon-trash"></span></a>
 										    </td>
                                         </tr>
                                     <% } %>

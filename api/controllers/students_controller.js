@@ -17,10 +17,6 @@ class StudentController {
             if (students) {
                 console.log(students);
                 res.render('/Student_list', {posts: students});
-
-                // res.json({
-                //     data: students,
-                //     status: true
                 
             }
 
@@ -51,14 +47,19 @@ class StudentController {
     }
 
     deleteStudent(req, res, next) {
+        var _id= req.params.deldoc;
+        var removeQuery = studentSchema.remove({id : _id });
+        
+        removeQuery.exec();
 
     }
 
-    editStudents(req, res, next) {
-        StudentSchema.findAndModify({ id:''}, (err, students) => {
+    editStudent(req, res, next) {
+        var _id= req.params.here;
+        StudentSchema.findAndModify({ id:'__id'}, (err, students) => {
             if (err)
                 res.json({
-                    message: "Students not found",
+                    message: "failed to edit",
                     status: false
                 });
 

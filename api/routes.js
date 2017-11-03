@@ -4,9 +4,10 @@ const router = express.Router();
 
 router.get('/student', StudentController.getAllStudent);
 router.post('/student', StudentController.createStudent);
-// router.put('')
+router.get('/Edit_Student_profile/:here', StudentController.editStudent);
+router.get('/del/:deldoc', StudentController.deleteStudent);
+router.get('Student_list', StudentController.getAllStudent);
 
-// router.get('/Student_list', StudentController.getStudent);
-// router.get('/')
+
 
 module.exports = router;
