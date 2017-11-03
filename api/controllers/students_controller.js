@@ -30,7 +30,6 @@ class StudentController {
         newStudent.matric_no = req.body.matric_no;
         newStudent.department = req.body.department;
         newStudent.level = req.body.level;
-        newStudent.religion = req.body.religion;
         newStudent.gender = req.body.gender;
         newStudent.phone_no = req.body.phone_no;
         newStudent.date_of_birth = req.body.date_of_birth;

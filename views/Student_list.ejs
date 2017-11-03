@@ -56,7 +56,7 @@
                                     	<th>Level</th>
                                     	<th>Gender</th>
                                     	<th>Date of Birth</th>
-                                    	<th>Religion</th>
+                                    	
                                     	<th>Phone</th>
                                     	<th>Action</th>
                                     </thead>
@@ -65,11 +65,12 @@
                                         <tr>
                                         	<td><%= posts[i].last_name + posts[i].first_name %></td>
                                         	<td><%= posts[i].department %></td>
-                                        	<td><%= posts[i].level %></td>
-                                        	<td><%= posts[i].matric_no %></td>
+                                        	
+                                            <td><%= posts[i].matric_no %></td>
+                                            <td><%= posts[i].level %></td>
                                         	<td><%= posts[i].gender %></td>
                                         	<td><%= posts[i].date_of_birth %>y</td>
-                                        	<td><%= posts[i].religion %></td>
+                                        	
                                         	<td><%= posts[i].phone_no %></td>
                                         	<td><a href="/View_Student_profile/<%= posts[i].id %>"><span class="glyphicon glyphicon-eye-open"></span></a>
                                         	&nbsp &nbsp       

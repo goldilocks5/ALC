@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
     matric_no: { type: Number, required: true},
     gender: { type: String, required: true},
     date_of_birth: { type: Date, required: true},
-    religion: { type: String, required: true},
+
     level:  {type: String, required: true},
     phone_no: { type: Number, required: true},
     

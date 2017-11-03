@@ -9,7 +9,7 @@ $(document).ready(function() {
             department: $('#department').val(),
             gender: $('gender').val(),
             date_of_birth: $('#date_of_birth').val(),
-            religion: $('#religion').val(),
+           
             level: $('#level').val(),
             phone_no: $('#phone_no').val()
         }
@@ -44,7 +44,7 @@ $(document).ready(function() {
             department: $('#department').val(),
             gender: $('gender').val(),
             date_of_birth: $('#date_of_birth').val(),
-            religion: $('#religion').val(),
+            
             level: $('#level').val(),
             phone_no: $('#phone_no').val()
         }
