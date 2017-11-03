@@ -54,7 +54,7 @@ $(document).ready(function() {
                 // $('#studentDiv').html('')
                 alert(response.data.message)
                 //redirect
-                window.location.href="/View_Student_profile";
+                window.location.href="/Student_list";
             } else {
                 //blah blah
                 alert(response.data.message)

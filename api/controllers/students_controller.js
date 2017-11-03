@@ -47,16 +47,16 @@ class StudentController {
     }
 
     deleteStudent(req, res, next) {
-        var _id= req.params.deldoc;
-        var removeQuery = studentSchema.remove({id : _id });
+        var del_id= req.params.deldoc;
+        var removeQuery = studentSchema.remove({id : del_id });
         
         removeQuery.exec();
 
     }
 
     editStudent(req, res, next) {
-        var _id= req.params.here;
-        StudentSchema.findAndModify({ id:'__id'}, (err, students) => {
+        var edit_id= req.params.here;
+        StudentSchema.findAndModify({ id:'edit__id'}, (err, students) => {
             if (err)
                 res.json({
                     message: "failed to edit",
@@ -70,6 +70,15 @@ class StudentController {
             }
 
         })
+    }
+
+    viewProfile(req, res, next){
+        var view_id=req.params.profile;
+        StudentSchema.findOne( {id:'view_id'}, function(err,obj) { 
+            console.log(obj); 
+            res.render('/View_Student_profile', {view_posts: obj});
+        });
+        
     }
 
     }
