@@ -6,7 +6,7 @@ class StudentController {
         console.log('new student controller instance created')
     }
 
-    getStudent(req, res, next) {
+    getAllStudent(req, res, next) {
         StudentSchema.find({}, (err, students) => {
             if (err)
                 res.json({
@@ -15,12 +15,13 @@ class StudentController {
                 });
 
             if (students) {
+                console.log(students);
+                res.render('/Student_list', {posts: students});
 
-
-                res.json({
-                    data: students,
-                    status: true
-                });
+                // res.json({
+                //     data: students,
+                //     status: true
+                
             }
 
         })
@@ -53,9 +54,24 @@ class StudentController {
 
     }
 
-    getAllStudents(req, res, next) {
+    editStudents(req, res, next) {
+        StudentSchema.findAndModify({ id:''}, (err, students) => {
+            if (err)
+                res.json({
+                    message: "Students not found",
+                    status: false
+                });
+
+            if (students) {
+                console.log(students);
+                res.render('/Student_list', {posts: students});
+
+            }
+
+        })
+    }
 
     }
-}
+
 
 module.exports = new StudentController();

@@ -15,13 +15,13 @@
 
             <ul class="nav">
                 <li>
-                    <a href="Create_Student_profile.ejs">
+                    <a href="/Create_Student_profile">
                         <i class="pe-7s-user"></i>
                         <p>Create Resource</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="Student_list.ejs">
+                    <a href="/Student_list">
                         <i class="pe-7s-note2"></i>
                         <p>Student List</p>
                     </a>
@@ -63,28 +63,28 @@
                                     	<th>Gender</th>
                                     	<th>Date of Birth</th>
                                     	<th>Religion</th>
-                                    	<th>Level</th>
                                     	<th>Phone</th>
                                     	<th>Action</th>
                                     </thead>
-                                    <tbody><a href="View_Student_profile.ejs">
+                                    <tbody>
+                                    <% for (var i = 0; i < posts.length; i++) { %>
                                         <tr>
-                                        	<td>Patience</td>
-                                        	<td>Physics</td>
-                                        	<td>300</td>
-                                        	<td>185789</td>
-                                        	<td>Female</td>
-                                        	<td>10 may</td>
-                                        	<td>Christian</td>
-                                        	<td>patiencedogo799@gmail.com</td>
-                                        	<td>08067604558</td>
-                                        	<td><a href="View_Student_profile.ejs"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                        	<td><%= posts[i].last_name + posts[i].first_name %></td>
+                                        	<td><%= posts[i].department %></td>
+                                        	<td><%= posts[i].level %></td>
+                                        	<td><%= posts[i].matric_no %></td>
+                                        	<td><%= posts[i].gender %></td>
+                                        	<td><%= posts[i].date_of_birth %>y</td>
+                                        	<td><%= posts[i].religion %></td>
+                                        	<td><%= posts[i].phone_no %></td>
+                                        	<td><a href="/View_Student_profile/<%= posts[i].matric_no %>"><span class="glyphicon glyphicon-eye-open"></span></a>
                                         	&nbsp &nbsp       
-										    <a href="Edit_Student_profile.ejs" id="delete"><span class="glyphicon glyphicon-edit"></span></a>
+										    <a href="/Edit_Student_profile/<%= posts[i].matric_no %>" id="delete"><span class="glyphicon glyphicon-edit"></span></a>
 										    &nbsp &nbsp       
 										    <a href="#" id="delete"><span class="glyphicon glyphicon-trash"></span></a>
 										    </td>
-                                        </tr></a>
+                                        </tr>
+                                    <% } %>
                                     </tbody>
                                 </table>
 
