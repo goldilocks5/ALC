@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         axios.post('http://localhost:3000/api/student', student )
 
-        .then((response) => {
+        .then( function(response){
             alert("you got this far girl");
             console.log(response)
             if(response.data.status){
