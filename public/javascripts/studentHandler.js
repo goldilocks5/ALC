@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         const student = {
             first_name: $('#first_name').val(),
-            last_name: $('#last_name'),
+            last_name: $('#last_name').val(),
             matric_no: $('#matric_no').val(),
             department: $('#department').val(),
             gender: $('gender').val(),
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 // $('#studentDiv').html('')
                 alert(response.data.message)
                 //redirect
-                window.location.href="#";
+                window.location.href="/Student_list";
             } else {
                 //blah blah
                 alert(response.data.message)
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
         const student = {
             first_name: $('#first_name').val(),
-            last_name: $('#last_name'),
+            last_name: $('#last_name').val(),
             matric_no: $('#matric_no').val(),
             department: $('#department').val(),
             gender: $('gender').val(),
