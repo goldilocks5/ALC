@@ -1,4 +1,4 @@
-const StudentSchema = require('../models/students_schema');
+const Student = require('../models/students_schema');
 
 class StudentController {
 
@@ -7,7 +7,7 @@ class StudentController {
     }
 
     getAllStudent(req, res, next) {
-        StudentSchema.find({}, (err, students) => {
+        Student.find({}, (err, students) => {
             if (err)
                 res.json({
                     message: "Students not found",
@@ -16,7 +16,7 @@ class StudentController {
 
             if (students) {
                 console.log(students);
-                res.render('/Student_list', {posts: students});
+                res.render('Student_list', {students: students});
                 
             }
 
@@ -24,7 +24,7 @@ class StudentController {
     }
 
     createStudent(req, res, next) {
-        const newStudent = new StudentSchema();
+        const newStudent = new Student();
         newStudent.first_name = req.body.first_name;
         newStuden.Last_name = req.body.last_name
         newStudent.matric_no = req.body.matric_no;
@@ -34,7 +34,7 @@ class StudentController {
         newStudent.phone_no = req.body.phone_no;
         newStudent.date_of_birth = req.body.date_of_birth;
 
-        newStudent.save((err) => {
+        student.save((err) => {
             if (err) {
                 console.log(err)
                 res.json({ status: false, message: ' Student creation failed' })
@@ -47,7 +47,7 @@ class StudentController {
 
     deleteStudent(req, res, next) {
         var del_id= req.params.deldoc;
-        var removeQuery = studentSchema.remove({id : del_id });
+        var removeQuery = Student.remove({ id: del_id });
         
         removeQuery.exec();
 
@@ -55,7 +55,18 @@ class StudentController {
 
     editStudent(req, res, next) {
         var edit_id= req.params.here;
-        StudentSchema.findAndModify({ id:'edit__id'}, (err, students) => {
+
+        const edit_newStudent = new Student();
+        edit_newStudent.first_name = req.body.first_name;
+        edit_newStuden.Last_name = req.body.last_name
+        edit_newStudent.matric_no = req.body.matric_no;
+        edit_newStudent.department = req.body.department;
+        edit_newStudent.level = req.body.level;
+        edit_newStudent.gender = req.body.gender;
+        edit_newStudent.phone_no = req.body.phone_no;
+        edit_newStudent.date_of_birth = req.body.date_of_birth;
+
+        Student.findOneAndUpdate({ id: edit_id}, {edit_newStudent}, {new: true}, (err, students) => {
             if (err)
                 res.json({
                     message: "failed to edit",
@@ -64,7 +75,7 @@ class StudentController {
 
             if (students) {
                 console.log(students);
-                res.render('/Student_list', {posts: students});
+                res.json({ status: true, message: 'Student successfully created' })
 
             }
 
@@ -73,9 +84,9 @@ class StudentController {
 
     viewProfile(req, res, next){
         var view_id=req.params.profile;
-        StudentSchema.findOne( {id:'view_id'}, function(err,obj) { 
+        Student.findOne( {id: view_id}, function(err,obj) { 
             console.log(obj); 
-            res.render('/View_Student_profile', {view_posts: obj});
+            res.render('View_Student_profile', {view_students: obj});
         });
         
     }

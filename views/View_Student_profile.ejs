@@ -13,13 +13,13 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="Create_Student_profile.html">
+                    <a href="/">
                         <i class="pe-7s-user"></i>
                         <p>Create Resource</p>
                     </a>
                 </li>
                 <li>
-                    <a href="Student_list.html">
+                    <a href="/api/Student_list">
                         <i class="pe-7s-note2"></i>
                         <p>Student List</p>
                     </a>
@@ -53,14 +53,14 @@
                                 <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" value="<%= posts[i].first_name %>">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" value="<%= view_students[i].name %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" value="<%= posts[i].Last_name %>">
+                                                <label>Faculty</label>
+                                                <input type="text" class="form-control" value="<%= view_students[i].faculty %>">
                                             </div>
                                         </div>
                                     </div>
@@ -69,13 +69,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Department</label>
-                                                <input type="text" class="form-control" value="<%= posts[i].department %>">
+                                                <input type="text" class="form-control" value="<%= view_students[i].department %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Matric number</label>
-                                                <input type="number" class="form-control" value="<%= posts[i].matric_no %>">
+                                                <input type="number" class="form-control" value="<%= view_students[i].matric_no %>">
                                             </div>
                                         </div>
                                     </div>
@@ -83,13 +83,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label> Level </label>
-                                                <input type="email" class="form-control" value="<%= posts[i].level %>">
+                                                <input type="email" class="form-control" value="<%= view_students[i].level %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>phone</label>
-                                                <input type="number" class="form-control" value="<%= posts[i].phone_no %>">
+                                                <input type="number" class="form-control" value="<%= view_students[i].phone_no %>">
                                             </div>
                                         </div>
                                     </div>
@@ -97,13 +97,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input type="date" class="form-control" value="<%= posts[i].date_of_birth %>">
+                                                <input type="date" class="form-control" value="<%= view_students[i].date_of_birth %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Gender</label>
-                                                <input type="text" class="form-control" value="<%= posts[i].gender %>">
+                                                <input type="text" class="form-control" value="<%= view_students[i].gender %>">
                                             </div>
                                         </div>
                                     </div>
