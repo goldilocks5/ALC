@@ -25,8 +25,8 @@ class StudentController {
 
     createStudent(req, res, next) {
         const newStudent = new Student();
-        newStudent.first_name = req.body.first_name;
-        newStuden.Last_name = req.body.last_name
+        newStudent.name = req.body.name;
+        newStudent.faculty = req.body.faculty;
         newStudent.matric_no = req.body.matric_no;
         newStudent.department = req.body.department;
         newStudent.level = req.body.level;
@@ -34,8 +34,9 @@ class StudentController {
         newStudent.phone_no = req.body.phone_no;
         newStudent.date_of_birth = req.body.date_of_birth;
 
-        student.save((err) => {
+        newStudent.save((err) => {
             if (err) {
+                
                 console.log(err)
                 res.json({ status: false, message: ' Student creation failed' })
             }
@@ -57,8 +58,8 @@ class StudentController {
         var edit_id= req.params.here;
 
         const edit_newStudent = new Student();
-        edit_newStudent.first_name = req.body.first_name;
-        edit_newStuden.Last_name = req.body.last_name
+        edit_newStudent.name = req.body.name;
+        edit_newStuden.faculty= req.body.faculty;
         edit_newStudent.matric_no = req.body.matric_no;
         edit_newStudent.department = req.body.department;
         edit_newStudent.level = req.body.level;

@@ -24,7 +24,7 @@ $(document).ready(function() {
                 // $('#studentDiv').html('')
                 alert(response.data.message)
                 //redirect
-                window.location.href="/Student_list";
+                window.location.href="/api/Student_list";
             } else {
                 //blah blah
                 alert(response.data.message)
@@ -57,7 +57,7 @@ $(document).ready(function() {
                 // $('#studentDiv').html('')
                 alert(response.data.message)
                 //redirect
-                window.location.href="/Student_list";
+                window.location.href="/api/Student_list";
             } else {
                 //blah blah
                 alert(response.data.message)
