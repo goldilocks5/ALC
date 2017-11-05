@@ -48,7 +48,7 @@ class StudentController {
 
     deleteStudent(req, res, next) {
         var del_id= req.params.deldoc;
-        var removeQuery = Student.remove({ id: del_id });
+        var removeQuery = Student.remove({ _id: del_id });
         
         removeQuery.exec();
 
@@ -67,7 +67,7 @@ class StudentController {
         edit_newStudent.phone_no = req.body.phone_no;
         edit_newStudent.date_of_birth = req.body.date_of_birth;
 
-        Student.findOneAndUpdate({ id: edit_id}, {edit_newStudent}, {new: true}, (err, students) => {
+        Student.findOneAndUpdate({ _id: edit_id}, {edit_newStudent}, {new: true}, (err, students) => {
             if (err)
                 res.json({
                     message: "failed to edit",
@@ -85,7 +85,7 @@ class StudentController {
 
     viewProfile(req, res, next){
         var view_id=req.params.profile;
-        Student.findOne( {id: view_id}, function(err,obj) { 
+        Student.findOne( { _id: view_id}, function(err,obj) { 
             console.log(obj); 
             res.render('View_Student_profile', {view_students: obj});
         });

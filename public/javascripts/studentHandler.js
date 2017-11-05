@@ -7,7 +7,7 @@ $(document).ready(function() {
             faculty: $('#faculty').val(),
             matric_no: $('#matric_no').val(),
             department: $('#department').val(),
-            gender: $('gender').val(),
+            gender: $('#gender').val(),
             date_of_birth: $('#date_of_birth').val(),
            
             level: $('#level').val(),
@@ -43,7 +43,7 @@ $(document).ready(function() {
             faculty: $('#edit_faculty').val(),
             matric_no: $('#edit_matric_no').val(),
             department: $('#edit_department').val(),
-            gender: $('edit_gender').val(),
+            gender: $('#edit_gender').val(),
             date_of_birth: $('#edit_date_of_birth').val(),
             
             level: $('#edit_level').val(),
