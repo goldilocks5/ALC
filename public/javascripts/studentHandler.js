@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         const student = {
-            name: $('#first_name').val(),
+            name: $('#name').val(),
             faculty: $('#faculty').val(),
             matric_no: $('#matric_no').val(),
             department: $('#department').val(),
