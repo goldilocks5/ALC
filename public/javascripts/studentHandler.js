@@ -13,7 +13,6 @@ $(document).ready(function() {
             level: $('#level').val(),
             phone_no: $('#phone_no').val()
         }
-        alert("you got this far girl");
 
         axios.post('http://localhost:3000/api/student', student )
 
