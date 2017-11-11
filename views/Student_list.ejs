@@ -1,40 +1,12 @@
 <% layout('layout') -%>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="img/sidebar-5.jpg">
-
-    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-
-
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="#" class="simple-text">
-                    Student Resource
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li>
-                    <a href="/">
-                        <i class="pe-7s-user"></i>
-                        <p>Create Resource</p>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="/api/Student_list">
-                        <i class="pe-7s-note2"></i>
-                        <p>Student List</p>
-                    </a>
-                </li>
-               
-            </ul>
-    	</div>
-    </div>
-
+    <%- include ./partials/sidebar %>
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
+                        <h4>List of Student Resources</h4>
                 </div>
                 <div class="collapse navbar-collapse">
                 </div>
@@ -43,9 +15,7 @@
 
                     <div class="col-md-12">
                         <div class="card card-plain">
-                            <div class="header">
-                                <h4 class="title">Listing Student Resource</h4>
-                            </div>
+    
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover">
     
@@ -74,10 +44,11 @@
                                         	
                                         	<td><%= students[i].phone_no %></td>
                                         	<td><a href="/api/View_Student_profile/<%= students[i]._id %>" id="view" ><span class="glyphicon glyphicon-eye-open"></span></a>
-                                        	&nbsp &nbsp       
-										    <a href="/api/Edit_Student_profile/<%= students[i]._id %>" id="edit"><span class="glyphicon glyphicon-edit"></span></a>
-										    &nbsp &nbsp       
-										    <a href="/api/del/<%= students[i]._id %>" id="delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                        	&nbsp &nbsp &nbsp 
+										    <a href="/api/edit_student_profile/<%= students[i]._id %>" id="edit"><span class="glyphicon glyphicon-edit"></span></a>
+										    &nbsp &nbsp &nbsp      
+                                            <span id="deleteButton" class="glyphicon glyphicon-trash"></span>
+                                            <input id="student_id" value="<%= students[i]._id %>" hidden>
 										    </td>
                                         </tr>
                                     <% } %>

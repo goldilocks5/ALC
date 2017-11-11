@@ -31,7 +31,7 @@ class StudentController {
         newStudent.department = req.body.department;
         newStudent.level = req.body.level;
         newStudent.gender = req.body.gender;
-        newStudent.phone_no = req.body.phone_no;
+        newStudent.phone_no = $req.body.phone_no;
         newStudent.date_of_birth = req.body.date_of_birth;
 
         newStudent.save((err) => {
@@ -47,39 +47,44 @@ class StudentController {
     }
 
     deleteStudent(req, res, next) {
-        var del_id= req.params.deldoc;
-        var removeQuery = Student.remove({ _id: del_id });
-        
-        removeQuery.exec();
 
+        var del_id= req.params.deldoc;
+
+        Student.findOne({ _id: del_id }).remove().exec()
+            .then(()=>{
+                res.json({status: true, message: "Student successfully deleted :)"} )
+            })
+            .catch((err)=>{
+                res.json({status: false, message: "Student failed to be deleted :)"} )
+            })
+        };
+        
+        
+
+    editStudentPage(req, res, next){
+        const edit_id= req.params.here;
+
+        Student.findOne({ _id: edit_id}, function(err, editit){
+        res.render('edit_student_profile', { edit_students: editit });
+    });
     }
 
     editStudent(req, res, next) {
-        var edit_id= req.params.here;
-
-        const edit_newStudent = new Student();
-        edit_newStudent.name = req.body.name;
-        edit_newStuden.faculty= req.body.faculty;
-        edit_newStudent.matric_no = req.body.matric_no;
-        edit_newStudent.department = req.body.department;
-        edit_newStudent.level = req.body.level;
-        edit_newStudent.gender = req.body.gender;
-        edit_newStudent.phone_no = req.body.phone_no;
-        edit_newStudent.date_of_birth = req.body.date_of_birth;
-
-        Student.findOneAndUpdate({ _id: edit_id}, {edit_newStudent}, {new: true}, (err, students) => {
+        const edit_id= req.params.student_id;
+        
+        Student.findOneAndUpdate({ _id: edit_id}, req.body, {new: true}, (err, student) => {
             if (err)
                 res.json({
                     message: "failed to edit",
                     status: false
                 });
 
-            if (students) {
-                console.log(students);
-                res.json({ status: true, message: 'Student successfully created' })
-
+            if (student) {
+                console.log(student);
+                res.json({ status: true, message: 'Student successfully edited' })
+            } else {
+                res.json({ status: false, message: 'Student doesn\'t exist'})
             }
-
         })
     }
 

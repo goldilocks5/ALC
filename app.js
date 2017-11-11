@@ -6,6 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var engine = require('ejs-mate');
 var mongoose = require('mongoose')
+//multer
+// var multer  = require('multer')
+// var upload = multer({ dest: 'uploads/' })
+
+// app.post('/profile', upload.single('avatar'), function (req, res, next) {
+//   // req.file is the `avatar` file
+//   // req.body will hold the text fields, if there were any
+// })
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -14,7 +23,7 @@ var api = require('./api/routes');
 
 var app = express();
 //connect to database
-mongoose.connect('mongodb://golden:All3all@ds249545.mlab.com:49545/project');
+mongoose.connect('mongodb://127.0.0.1:27017/project');
 // view engine setup
 app.engine('ejs',engine)
 app.set('views', path.join(__dirname, 'views'));

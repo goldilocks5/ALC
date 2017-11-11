@@ -1,9 +1,7 @@
 <% layout('layout') -%>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="img/sidebar-5.jpg">
-
-
+    <div class="sidebar" data-color="blue" data-image="img/sidebar-5.jpg">
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
@@ -12,7 +10,7 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="/">
                         <i class="pe-7s-user"></i>
                         <p>Create Resource</p>
@@ -23,7 +21,7 @@
                         <i class="pe-7s-note2"></i>
                         <p>Student List</p>
                     </a>
-                </li>s
+                </li>
             </ul>
     	</div>
     </div>
@@ -32,7 +30,7 @@
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"> Edit Student Resource</a>
+                    <h4> Edit Student Resource</h4>
                 </div>
                 <div class="collapse navbar-collapse">
                 </div>
@@ -54,13 +52,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" id='edit_name' class="form-control">
+                                                <input type="text" id='edit_name' class="form-control" value="<%= edit_students.name %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Faculty</label>
-                                                <input type="text" id='edit_faculty' class="form-control">
+                                                <input type="text" id='edit_faculty' class="form-control" value="<%= edit_students.faculty %>">
                                             </div>
                                         </div>
                                     </div>
@@ -69,13 +67,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Department</label>
-                                                <input type="text" id='edit_department' class="form-control">
+                                                <input type="text" id='edit_department' class="form-control" value="<%= edit_students.department %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Matric number</label>
-                                                <input type="number" id='edit_matric_no' class="form-control">
+                                                <input type="number" id='edit_matric_no' class="form-control" value="<%= edit_students.matric_no %>">
                                             </div>
                                         </div>
                                     </div>
@@ -83,13 +81,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>level</label>
-                                                <input type="text" id='edit_level' class="form-control">
+                                                <input type="text" id='edit_level' class="form-control" value="<%= edit_students.level %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>phone</label>
-                                                <input type="number" id='edit_phone_no' class="form-control">
+                                                <input type="number" id='edit_phone_no' class="form-control" value="<%= edit_students.phone_no %>">
                                             </div>
                                         </div>
                                     </div>
@@ -97,16 +95,17 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input type="date" id='edit_date_of_birth' class="form-control">
+                                                <input type="date" id='edit_date_of_birth' class="form-control" value="<%= edit_students.date_of_birth %>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Gender</label>
-                                                <input type="text" id='edit_gender'class="form-control">
+                                                <input type="text" id='edit_gender'class="form-control" value="<%= edit_students.gender %>">
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="text" id='student_id'class="form-control" value="<%= edit_students._id %>" hidden>                                    
                                     
                                   <button type="submit" id="editStudent" class="btn btn-info btn-fill pull-right">Update Profile</button>
                                     <div class="clearfix"></div>
