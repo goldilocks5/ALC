@@ -5,15 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var engine = require('ejs-mate');
-var mongoose = require('mongoose')
-//multer
-// var multer  = require('multer')
-// var upload = multer({ dest: 'uploads/' })
-
-// app.post('/profile', upload.single('avatar'), function (req, res, next) {
-//   // req.file is the `avatar` file
-//   // req.body will hold the text fields, if there were any
-// })
+var mongoose = require('mongoose');
 
 
 var index = require('./routes/index');

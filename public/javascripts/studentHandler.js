@@ -15,15 +15,23 @@ $(document).ready(function() {
 
         axios.post('/api/student', student )
         .then( function(response){
-            alert('just got into post.then');
+            
             console.log(response)
             if(response.data.status){
               
                 alert(response.data.message)
-                //redirect
-                window.location.href="/api/student_list";
+                
+                // clear input fields here 
+                $('#name').val('');
+                $('#faculty').val('');
+                $('#matric_no').val('');
+                $('#department').val('');
+                $('#gender').val('');
+                $('#date_of_birth').val('');
+                $('#level').val('');
+                $('#phone_no').val('');
             } else {
-                console.log('just got into post else')
+                
                 alert(response.data.message)
             }
         })
@@ -74,7 +82,7 @@ $(document).ready(function() {
     });
  
     $("#deleteButton").click(function(e){
-        //  e.preventDefault();
+         e.preventDefault();
          
 
         const student_id = $('#student_id').val();

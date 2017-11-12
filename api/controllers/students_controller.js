@@ -81,7 +81,7 @@ class StudentController {
                 });
 
             if (student) {
-                console.log(student);
+                
                 res.json({ status: true, message: 'Student successfully edited' })
             } else {
                 res.json({ status: false, message: 'Student doesn\'t exist'})
@@ -92,7 +92,7 @@ class StudentController {
     viewProfile(req, res, next){
         var view_id=req.params.profile;
         Student.findOne( { _id: view_id}, function(err,obj) { 
-            console.log(obj); 
+            
             res.render('view_student', {view_students: obj});
         });
         

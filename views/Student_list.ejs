@@ -66,7 +66,7 @@
                                         	<td><%= students[i].gender %></td>
                                         	<td><%= students[i].date_of_birth.toDateString() %></td>
                                         	
-                                        	<td><%= students[i].phone_no.toString() %></td>
+                                        	<td><%= students[i].phone_no %></td>
                                         	<td><a href="/api/student/view/<%= students[i]._id %>" id="view" ><span class="glyphicon glyphicon-eye-open"></span></a>
                                         	&nbsp &nbsp &nbsp 
 										    <a href="/api/student/edit/<%= students[i]._id %>" id="edit"><span class="glyphicon glyphicon-edit"></span></a>
