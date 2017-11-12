@@ -52,7 +52,7 @@ class StudentController {
         
         Student.findOne({ _id: del_id }).remove().exec()
             .then(()=>{
-                res.json({status: true, message: "Student successfully deleted. Please refresh the page."} );
+                res.json({status: true, message: "Student successfully deleted."} );
 
             })
             .catch((err)=>{

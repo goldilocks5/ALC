@@ -15,7 +15,8 @@ var api = require('./api/routes');
 
 var app = express();
 //connect to database
-mongoose.connect('mongodb://127.0.0.1:27017/project');
+mongoose.connect('mongodb://mygold:supperGold@ds249545.mlab.com:49545/project');
+// mongoose.connect('mongodb://127.0.0.1:27017/project');
 // view engine setup
 app.engine('ejs',engine)
 app.set('views', path.join(__dirname, 'views'));

@@ -1,14 +1,20 @@
 <% layout('layout') -%>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand logo" href="#">WELCOME</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">CREATE STUDENT</a></li>
+        <li><a href="/api/student_list">STUDENT LIST</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="img/sidebar-5.jpg">
+    <div class="sidebar" data-color="blue">
 
     	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="#" class="simple-text">
-                    STUDENT RESOURCE
-                </a>
-            </div>
 
             <ul class="nav">
                 <li>
@@ -28,16 +34,6 @@
     </div>
 
     <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <h6>View Student</h6>
-                </div>
-                <div class="collapse navbar-collapse">
-                </div>
-            </div>
-        </nav>
-
 
         <div class="content">
             <div class="container-fluid">
@@ -96,7 +92,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <h6><%= view_students.date_of_birth.toDateString(); %></h6>
+                                                <h6><%= view_students.date_of_birth.toDateString() %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

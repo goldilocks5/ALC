@@ -90,6 +90,7 @@ $(document).ready(function() {
             .then((response) => {
                 if(response.data.status){
                     alert(response.data.message);
+                    window.location.reload();
                 }
                 else
                     alert(response.data.message);
