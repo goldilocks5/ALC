@@ -88,7 +88,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>phone</label>
-                                                <h6><%= view_students.phone_no %></h6>
+                                                <h6><%= view_students.phone_no.toString() %></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <h6><%= view_students.date_of_birth.toJSON().slice(0,10).replace(/-/g,'/') %></h6>
+                                                <h6><%= view_students.date_of_birth.toDateString(); %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

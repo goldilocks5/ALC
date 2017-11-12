@@ -14,17 +14,16 @@ $(document).ready(function() {
         }
 
         axios.post('/api/student', student )
-
         .then( function(response){
-            
+            alert('just got into post.then');
             console.log(response)
             if(response.data.status){
-                // $('#studentDiv').html('')
+              
                 alert(response.data.message)
                 //redirect
                 window.location.href="/api/student_list";
             } else {
-                //blah blah
+                console.log('just got into post else')
                 alert(response.data.message)
             }
         })
