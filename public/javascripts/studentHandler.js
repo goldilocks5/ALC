@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#createStudent').click((e)=> {
         e.preventDefault();
-
+        
         const student = {
             name: $('#name').val(),
             faculty: $('#faculty').val(),
@@ -16,13 +16,13 @@ $(document).ready(function() {
         axios.post('/api/student', student )
 
         .then( function(response){
-            alert('you got here');
+            
             console.log(response)
             if(response.data.status){
                 // $('#studentDiv').html('')
                 alert(response.data.message)
                 //redirect
-                window.location.href="/api/Student_list";
+                window.location.href="/api/student_list";
             } else {
                 //blah blah
                 alert(response.data.message)
@@ -75,11 +75,11 @@ $(document).ready(function() {
     });
  
     $("#deleteButton").click(function(e){
-         e.preventDefault();
-         console.log('object');
+        //  e.preventDefault();
+         
 
         const student_id = $('#student_id').val();
-        axios.delete(`/api/student/${student_id}`)
+        axios.delete(`/api/student/delete/${student_id}`)
             .then((response) => {
                 if(response.data.status){
                     alert(response.data.message);
@@ -88,23 +88,8 @@ $(document).ready(function() {
                     alert(response.data.message);
             })
             .catch((err) => {
-                alert('An error occured processing your request');
+                alert('An error occured when processing your request');
             })     
     })
 });
 
-// const promise = new Promise((resolve, reject) => {
-//    // done something
-//    if(true)
-//     resolve(1)
-//     else{
-//         reject('error mesga')
-//     }
-// })
-
-// promise.then(() => {
-// //sndsd
-// })
-// .catch((err) => {
-//     // dfk
-// })

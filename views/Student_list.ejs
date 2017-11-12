@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="active">
-                            <a href="/api/Student_list">
+                            <a href="/api/student_list">
                                 <i class="pe-7s-note2"></i>
                                 <p>Student List</p>
                             </a>
@@ -67,9 +67,9 @@
                                         	<td><%= students[i].date_of_birth.toDateString() %></td>
                                         	
                                         	<td><%= students[i].phone_no %></td>
-                                        	<td><a href="/api/view_student/<%= students[i]._id %>" id="view" ><span class="glyphicon glyphicon-eye-open"></span></a>
+                                        	<td><a href="/api/student/view/<%= students[i]._id %>" id="view" ><span class="glyphicon glyphicon-eye-open"></span></a>
                                         	&nbsp &nbsp &nbsp 
-										    <a href="/api/edit_student/<%= students[i]._id %>" id="edit"><span class="glyphicon glyphicon-edit"></span></a>
+										    <a href="/api/student/edit/<%= students[i]._id %>" id="edit"><span class="glyphicon glyphicon-edit"></span></a>
 										    &nbsp &nbsp &nbsp      
                                             <span id="deleteButton" class="glyphicon glyphicon-trash"></span>
                                             <input type="hidden" id="student_id" value="<%= students[i]._id %>">

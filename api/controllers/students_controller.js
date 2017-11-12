@@ -16,7 +16,7 @@ class StudentController {
 
             if (students) {
                 console.log(students);
-                res.render('Student_list', {students: students});
+                res.render('student_list', {students: students});
                 
             }
 
@@ -24,6 +24,7 @@ class StudentController {
     }
 
     createStudent(req, res, next) {
+       
         const newStudent = new Student();
         newStudent.name = req.body.name;
         newStudent.faculty = req.body.faculty;
@@ -48,11 +49,12 @@ class StudentController {
 
     deleteStudent(req, res, next) {
 
-        var del_id= req.params.deldoc;
-
+        var del_id= req.params.del_doc;
+        
         Student.findOne({ _id: del_id }).remove().exec()
             .then(()=>{
-                res.json({status: true, message: "Student successfully deleted"} )
+                res.json({status: true, message: "Student successfully deleted. Please refresh the page."} );
+
             })
             .catch((err)=>{
                 res.json({status: false, message: "Student failed to be deleted"} )
@@ -62,10 +64,10 @@ class StudentController {
         
 
     editStudentPage(req, res, next){
-        const edit_id= req.params.here;
+        const edit_id= req.params.edit_here;
 
-        Student.findOne({ _id: edit_id}, function(err, editit){
-        res.render('edit_student', { edit_students: editit });
+        Student.findOne({ _id: edit_id}, function(err, edit_doc){
+        res.render('edit_student', { edit_students: edit_doc });
     });
     }
 
