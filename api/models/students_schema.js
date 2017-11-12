@@ -8,7 +8,7 @@ const studentSchema = new mongoose.Schema({
     gender: { type: String, required: true},
     date_of_birth: { type: Date, required: true},   
     level:  {type: String, required: true},
-    phone_no:Number
+    phone_no:String
     // {type: mongoose.SchemaTypes.Email, required: true}
     
 

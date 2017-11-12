@@ -15,7 +15,6 @@ class StudentController {
                 });
 
             if (students) {
-                console.log(students);
                 res.render('student_list', {students: students});
                 
             }
@@ -32,7 +31,7 @@ class StudentController {
         newStudent.department = req.body.department;
         newStudent.level = req.body.level;
         newStudent.gender = req.body.gender;
-        newStudent.phone_no = $req.body.phone_no;
+        newStudent.phone_no = req.body.phone_no;
         newStudent.date_of_birth = req.body.date_of_birth;
 
         newStudent.save((err) => {
