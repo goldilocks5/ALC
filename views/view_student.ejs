@@ -2,6 +2,7 @@
 
 <div class="wrapper">
     <div class="sidebar" data-color="blue" data-image="img/sidebar-5.jpg">
+
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
@@ -13,7 +14,7 @@
                 <li>
                     <a href="/">
                         <i class="pe-7s-user"></i>
-                        <p>Create Resource</p>
+                        <p>Create Student</p>
                     </a>
                 </li>
                 <li>
@@ -30,7 +31,7 @@
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <h4> Edit Student Resource</h4>
+                    <h6>View Student</h6>
                 </div>
                 <div class="collapse navbar-collapse">
                 </div>
@@ -44,7 +45,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title"></h4>
+                                <h4 class="title"><%= view_students.name %> Details</h4>
                             </div>
                             <div class="content">
                                 <form>
@@ -52,13 +53,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" id='edit_name' class="form-control" value="<%= edit_students.name %>">
+                                                <h6><%= view_students.name %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Faculty</label>
-                                                <input type="text" id='edit_faculty' class="form-control" value="<%= edit_students.faculty %>">
+                                                <h6><%= view_students.faculty %></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -67,27 +68,27 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Department</label>
-                                                <input type="text" id='edit_department' class="form-control" value="<%= edit_students.department %>">
+                                                <h6><%= view_students.department %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Matric number</label>
-                                                <input type="number" id='edit_matric_no' class="form-control" value="<%= edit_students.matric_no %>">
+                                                <h6><%= view_students.matric_no %></h6>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>level</label>
-                                                <input type="text" id='edit_level' class="form-control" value="<%= edit_students.level %>">
+                                                <label> Level </label>
+                                                <h6><%= view_students.level %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>phone</label>
-                                                <input type="number" id='edit_phone_no' class="form-control" value="<%= edit_students.phone_no %>">
+                                                <h6><%= view_students.phone_no %></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -95,19 +96,17 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input type="date" id='edit_date_of_birth' class="form-control" value="<%= edit_students.date_of_birth %>">
+                                                <h6><%= view_students.date_of_birth.toJSON().slice(0,10).replace(/-/g,'/') %></h6>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Gender</label>
-                                                <input type="text" id='edit_gender'class="form-control" value="<%= edit_students.gender %>">
+                                                <h6><%= view_students.gender %></h6>
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" id='student_id'class="form-control" value="<%= edit_students._id %>" hidden>                                    
-                                    
-                                  <button type="submit" id="editStudent" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                        
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -122,7 +121,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <p class="copyright pull-right">
-                    &copy; 2017 <a href="http://#m">Dogo Patience</a>, made with love
+                    &copy; 2017 <a href="#">Dogo Patience</a>, made with love 
                 </p>
             </div>
         </footer>

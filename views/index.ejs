@@ -1,13 +1,37 @@
 <% layout('layout') -%>
 <div class="wrapper">
-    <%- include ./partials/sidebar %>    
+    <div class="sidebar" data-color="blue" data-image="img/sidebar-5.jpg">
+        
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <a href="#" class="simple-text">
+                            STUDENT RESOURCE
+                        </a>
+                    </div>
+        
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/">
+                                <i class="pe-7s-user"></i>
+                                <p>Create Student</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/api/Student_list">
+                                <i class="pe-7s-note2"></i>
+                                <p>Student List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
 
     <div class="main-panel main-main">
         <nav class="navbar navbar-default navbar-fixed main-head">
             <div class="container-fluid">
                 <div class="navbar-header">
                 
-                    <h4>Create Student Resource</h4>
+                    <h4>Create Student</h4>
                 </div>
                 <div class="collapse navbar-collapse">
                 </div>

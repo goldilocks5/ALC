@@ -52,10 +52,10 @@ class StudentController {
 
         Student.findOne({ _id: del_id }).remove().exec()
             .then(()=>{
-                res.json({status: true, message: "Student successfully deleted :)"} )
+                res.json({status: true, message: "Student successfully deleted"} )
             })
             .catch((err)=>{
-                res.json({status: false, message: "Student failed to be deleted :)"} )
+                res.json({status: false, message: "Student failed to be deleted"} )
             })
         };
         
@@ -65,7 +65,7 @@ class StudentController {
         const edit_id= req.params.here;
 
         Student.findOne({ _id: edit_id}, function(err, editit){
-        res.render('edit_student_profile', { edit_students: editit });
+        res.render('edit_student', { edit_students: editit });
     });
     }
 
@@ -92,7 +92,7 @@ class StudentController {
         var view_id=req.params.profile;
         Student.findOne( { _id: view_id}, function(err,obj) { 
             console.log(obj); 
-            res.render('View_Student_profile', {view_students: obj});
+            res.render('view_student', {view_students: obj});
         });
         
     }

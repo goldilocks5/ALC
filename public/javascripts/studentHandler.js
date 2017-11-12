@@ -16,7 +16,7 @@ $(document).ready(function() {
         axios.post('/api/student', student )
 
         .then( function(response){
-            
+            alert('you got here');
             console.log(response)
             if(response.data.status){
                 // $('#studentDiv').html('')
@@ -55,15 +55,15 @@ $(document).ready(function() {
                
                 alert(response.data.message)
 
-                // clear input fields here :)
-                $('edit_name').val() = "";
-                $('edit_faculty').val() = "";
-                $('edit_matric_no').val() = "";
-                $('edit_department').val() = "";
-                $('edit_gender').val() = "";
-                $('edit_date_of_birth').val() = "";
-                $('edit_level').val() = "";
-                $('edit_phone_no').val() = "";
+                // clear input fields here 
+                $('#edit_name').val('');
+                $('#edit_faculty').val('');
+                $('#edit_matric_no').val('');
+                $('#edit_department').val('');
+                $('#edit_gender').val('');
+                $('#edit_date_of_birth').val('');
+                $('#edit_level').val('');
+                $('#edit_phone_no').val('');
 
             } else {
                 alert(response.data.message)
@@ -88,7 +88,7 @@ $(document).ready(function() {
                     alert(response.data.message);
             })
             .catch((err) => {
-                alert('An error occured processing your request :-p');
+                alert('An error occured processing your request');
             })     
     })
 });
