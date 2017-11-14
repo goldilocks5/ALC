@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var engine = require('ejs-mate');
 var mongoose = require('mongoose');
 
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 //import the api router here
